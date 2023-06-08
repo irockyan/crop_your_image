@@ -402,16 +402,17 @@ class _CropEditorState extends State<_CropEditor> {
         widget.initialSize ?? 1,
       );
     } else {
-      final screenSizeRatio = calculator.screenSizeRatio(
-        _targetImage!,
-        MediaQuery.of(context).size,
-      );
-      rect = Rect.fromLTWH(
-        _imageRect.left + initialArea.left / screenSizeRatio,
-        _imageRect.top + initialArea.top / screenSizeRatio,
-        initialArea.width / screenSizeRatio,
-        initialArea.height / screenSizeRatio,
-      );
+      rect = initialArea;
+      // final screenSizeRatio = calculator.screenSizeRatio(
+      //   _targetImage!,
+      //   MediaQuery.of(context).size,
+      // );
+      // rect = Rect.fromLTWH(
+      //   _imageRect.left + initialArea.left / screenSizeRatio,
+      //   _imageRect.top + initialArea.top / screenSizeRatio,
+      //   initialArea.width / screenSizeRatio,
+      //   initialArea.height / screenSizeRatio,
+      // );
     }
   }
 
