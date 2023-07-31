@@ -139,19 +139,18 @@ class _CropSampleState extends State<CropSample> {
                           }),
                           initialSize: 0.5,
                           maskColor: _isSumbnail ? Colors.white : null,
-                          cornerDotBuilder: (size, edgeAlignment) =>
-                              const SizedBox.shrink(),
                           interactive: true,
                           fixArea: true,
                           radius: 20,
-                          initialAreaBuilder: (rect) {
-                            return Rect.fromLTRB(
-                              rect.left + 24,
-                              rect.top + 24,
-                              rect.right - 24,
-                              rect.bottom - 24,
-                            );
-                          },
+                          initialArea: Rect.fromLTWH(40, 40, 200, 200),
+                          // initialAreaBuilder: (rect) {
+                          //   return Rect.fromLTRB(
+                          //     rect.left + 24,
+                          //     rect.top + 24,
+                          //     rect.right - 24,
+                          //     rect.bottom - 24,
+                          //   );
+                          // },
                         ),
                         IgnorePointer(
                           child: Padding(

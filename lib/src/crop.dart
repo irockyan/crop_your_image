@@ -465,6 +465,7 @@ class _CropEditorState extends State<_CropEditor> {
                       children: [
                         Positioned(
                           left: _imageRect.left,
+                          // left: 0,
                           top: _imageRect.top,
                           child: Image.memory(
                             widget.image,
@@ -514,6 +515,10 @@ class _CropEditorState extends State<_CropEditor> {
                     ),
                   ),
                 ),
+              Positioned.fill(
+                  child: CustomPaint(
+                painter: CropGridPainter(_rect),
+              )),
               Positioned(
                 left: _rect.left - (dotTotalSize / 2),
                 top: _rect.top - (dotTotalSize / 2),
@@ -531,7 +536,7 @@ class _CropEditorState extends State<_CropEditor> {
                         },
                   child: widget.cornerDotBuilder
                           ?.call(dotTotalSize, EdgeAlignment.topLeft) ??
-                      const DotControl(),
+                      DotControl(),
                 ),
               ),
               Positioned(
@@ -669,6 +674,7 @@ class DotControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return SizedBox();
     return Container(
       color: Colors.transparent,
       width: dotTotalSize,
