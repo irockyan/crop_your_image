@@ -515,10 +515,12 @@ class _CropEditorState extends State<_CropEditor> {
                     ),
                   ),
                 ),
-              Positioned.fill(
+              Positioned(
+                  left: 0,
+                  top: 0,
                   child: CustomPaint(
-                painter: CropGridPainter(_rect),
-              )),
+                    painter: CropGridPainter(_rect),
+                  )),
               Positioned(
                 left: _rect.left - (dotTotalSize / 2),
                 top: _rect.top - (dotTotalSize / 2),
